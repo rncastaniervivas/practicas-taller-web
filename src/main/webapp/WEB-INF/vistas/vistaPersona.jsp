@@ -9,16 +9,16 @@
 <title>Tabla</title>
 </head>
 <body>
-	<table cols= 5 border=1>
+	<table>
 		<tr>
-		<td>Nombre</td>
-		<td>Apellido</td>
-		<td>Edad</td>
-		<td>Dni</td>
-		<td>Género</td>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Edad</th>
+		<th>Dni</th>
+		<th>Género</th>
 		</tr>
 		
-		<c:forEach begin="0" step= "1" items="${tablaAMostrar.rows}">
+		<c:forEach begin="1" end="${numero}"step= "1" items="${tablaAMostrar.rows}">
 		<tr>
 		<td><c:out value= "${tablaAMostrar.nombre}"></c:out></td>
 		<td>${tablaAMostrar.apellido}</td>

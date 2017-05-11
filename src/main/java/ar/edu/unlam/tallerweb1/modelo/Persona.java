@@ -9,13 +9,6 @@ public class Persona {
 	public String genero;
 	
 	
-	public Persona(String nombre, String apellido, int edad, int dni, String genero) {
-	this.nombre= nombre;
-	this.apellido= apellido;
-	this.edad= edad;
-	this.dni= dni;
-	this.genero= genero;
-	}
 	public String getNombre() {
 		return nombre;
 	}
