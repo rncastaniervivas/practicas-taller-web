@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,16 +34,28 @@ public class ControladorPersona {
 		
 	}
 	
-	@RequestMapping ("tabla/{numero}")
-	public ModelAndView mostrarTabla (@PathVariable int numero){
+	@RequestMapping ("tabla/{opcion}")
+	public ModelAndView mostrarTabla (@PathVariable String opcion){
+		String opcion = opcion;
+		ArrayList <Persona> listaPersona= new ArrayList <Persona> (); 
 		Persona miPersona = new Persona();
 		miPersona.nombre="Rocío";
 		miPersona.apellido="Castañer Vivas";
 		miPersona.edad= 30;
 		miPersona.dni=32859267;
 		miPersona.genero="F";
+		listaPersona.add(miPersona);
+		
+		Persona miPersona2= new Persona();
+		miPersona2.nombre="Ruben";
+		miPersona2.apellido="Alejandro";
+		miPersona2.edad= 30;
+		miPersona2.dni=12345678;
+		miPersona2.genero="M";
+		listaPersona.add(miPersona2);
+		
 		ModelMap model = new ModelMap();
-		model.put("miPersona", miPersona);
+		model.put("listaPersona", listaPersona);
 		model.put("numero", numero);
 		
 		return new ModelAndView("vistaAInvocar", model);
